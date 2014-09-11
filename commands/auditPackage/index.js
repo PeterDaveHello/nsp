@@ -1,6 +1,6 @@
 var path = require('path');
 
-var celeri       = require('celeri');
+var celeri = require('celeri');
 
 var auditPackage = require('./../../lib/auditPackage');
 var prettyOutput = require('./../../lib/prettyOutput');
