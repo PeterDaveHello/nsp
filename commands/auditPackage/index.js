@@ -1,4 +1,7 @@
-var celeri = require('celeri');
+var path = require('path');
+
+var celeri       = require('celeri');
+
 var auditPackage = require('./../../lib/auditPackage');
 var prettyOutput = require('./../../lib/prettyOutput');
 
@@ -17,7 +20,8 @@ celeri.option({
 // Action
 
 function action(data) {
-    auditPackage(function (err, results) {
+    auditPackage(path.resolve(process.cwd(), 'package.json'),
+      function (err, results) {
         if (err) {
             console.error(err);
             process.exit(1);
