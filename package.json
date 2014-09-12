@@ -16,6 +16,7 @@
     "connect": "^3.1.1",
     "node-print": "0.0.4",
     "npmconf": "^2.0.8",
+    "nsp-api": "^1.0.0",
     "osenv": "^0.1.0",
     "request": "^2.40.0",
     "semver": "^3.0.1",
