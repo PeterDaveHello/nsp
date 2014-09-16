@@ -1,7 +1,7 @@
 {
   "name": "nsp",
   "description": "Node Security Project command line tool",
-  "version": "0.2.8 ",
+  "version": "0.2.8",
   "author": "Node Security Project",
   "main": "index.js",
   "bin": "bin/nspCLI.js",
@@ -17,6 +17,7 @@
     "node-print": "0.0.4",
     "npmconf": "^2.0.8",
     "nsp-api": "^1.0.0",
+    "nsp-audit-shrinkwrap": "^1.0.0",
     "osenv": "^0.1.0",
     "request": "^2.40.0",
     "semver": "^3.0.1",

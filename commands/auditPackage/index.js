@@ -5,14 +5,15 @@ var prettyOutput = require('./../../lib/prettyOutput');
 // Command Description
 
 celeri.option({
+    command: 'audit-package',
+    description: 'audits your package.json against NSP db'
+}, action);
+
+celeri.option({
     command: 'package',
     description: 'audits your package.json against NSP db (same as audit-package)'
 }, action);
 
-celeri.option({
-    command: 'audit-package',
-    description: 'audits your package.json against NSP db'
-}, action);
 
 // Action
 
