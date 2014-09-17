@@ -15,7 +15,7 @@
     "speller": "^1.0.1",
     "strscanner": "0.0.8",
     "text-table": "^0.2.0",
-    "winston-email": "0.0.6"
+    "couchbase": "1.2.2"
   }
 }
 
