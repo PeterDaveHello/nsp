@@ -20,19 +20,17 @@ auditPackage('tests/data/vulnerable-package.json', function (err, results) {
     }];
 
     assert.ifError(err);
-    console.log('FIRST',results);
     assert.equal(1, results.length);
     assert.deepEqual(qs, results);
 });
 
-// auditPackage('tests/data/dependency-of-package.json', function (err, results) {
-//     var ancestry = ['root@0.0.1','winston-email@0.0.6','winston@0.7.3','request@2.16.6','qs@0.5.6'];
+auditPackage('tests/data/transitive-dependency.json', function (err, results) {
+    var ancestry =['root@0.0.1','couchbase@1.2.2','request@2.30.0','qs@0.6.6'];
 
-//     assert.ifError(err);
-//     console.log('SECOND',results);
-//     assert.equal(1, results.length);
-//     assert.deepEqual(ancestry, results[0].dependencyOf);
-// });
+    assert.ifError(err);
+    assert.equal(1, results.length);
+    assert.deepEqual(ancestry, results[0].dependencyOf);
+});
 
 auditPackage('tests/data/git-deps-package.json', function (err, results) {
     assert.ifError(err);
