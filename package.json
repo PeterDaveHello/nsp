@@ -40,6 +40,6 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "node tests/test.js"
   }
 }
