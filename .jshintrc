@@ -12,5 +12,6 @@
     "eqeqeq": true,
     "undef": true,
     "unused": false,
-    "node": true
+    "node": true,
+    "nonbsp": true
 }
