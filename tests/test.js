@@ -1,38 +1,58 @@
 var assert = require('assert');
+var sinon = require('sinon');
+var rewire = require('rewire');
 
-var auditPackage = require('./../lib/auditPackage');
+var auditPackage = rewire('./../lib/auditPackage');
+var fixtures = require('./data/fixtures');
 
-auditPackage('tests/data/vulnerable-package.json', function (err, results) {
-    var qs = [{
-        'module':'qs',
-        'version':'0.5.6',
-        'advisory':{
-            'title':'qs Denial-of-Service Extended Event Loop Blocking',
-            'author':'Tom Steele',
-            'module_name': 'qs',
-            'publish_date': 'Aug 6 2014 09:10:23 GMT-0800 (PST)',
-            'cves': [],
-            'vulnerable_versions': '<1.0.0',
-            'patched_versions': '>= 1.x',
-            'url': 'qs_dos_extended_event_loop_blocking'
-        },
-        'dependencyOf': ['test@0.0.1','qs@0.5.6']
-    }];
+describe('auditPackage', function () {
+    var validateStub;
+    var sandbox = sinon.sandbox.create();
 
-    assert.ifError(err);
-    assert.equal(1, results.length);
-    assert.deepEqual(qs, results);
-});
+    before(function () {
+        validateStub = sandbox.stub();
 
-auditPackage('tests/data/transitive-dependency.json', function (err, results) {
-    var ancestry =['root@0.0.1','couchbase@1.2.2','request@2.30.0','qs@0.6.6'];
+        validateStub.withArgs('qs').yields(null, fixtures['qs@0.5.x']);
+        validateStub.yields(null, []);
 
-    assert.ifError(err);
-    assert.equal(1, results.length);
-    assert.deepEqual(ancestry, results[0].dependencyOf);
-});
+        auditPackage.__set__('validateModule', validateStub);
+    });
 
-auditPackage('tests/data/git-deps-package.json', function (err, results) {
-    assert.ifError(err);
-    assert.equal(0, results.length);
+    after(function () {
+        sandbox.restore();
+    });
+
+    it('should return a list of advisory for a vulnerable package', function (done) {
+        auditPackage('tests/data/vulnerable-package.json', function (err, results) {
+            var qs = fixtures.qsVulnerabilityResponse;
+
+            assert.ifError(err);
+            assert.equal(2, results.length);
+            assert.deepEqual(qs, results);
+
+            done();
+        });
+    });
+
+    it('should return a valid list of ancestors', function (done) {
+        auditPackage('tests/data/transitive-dependency.json', function (err, results) {
+            var ancestry = ['root@0.0.1', 'couchbase@1.2.2', 'request@2.30.0', 'qs@0.6.6'];
+            assert.ifError(err);
+            assert.equal(1, results.length);
+            assert.deepEqual(ancestry, results[0].dependencyOf);
+
+            done();
+        });
+    });
+
+    it('should return an empty result list with git dependencies', function (done) {
+        validateStub.returns([]);
+
+        auditPackage('tests/data/git-deps-package.json', function (err, results) {
+            assert.ifError(err);
+            assert.equal(0, results.length);
+
+            done();
+        });
+    });
 });
