@@ -27,7 +27,6 @@
     "text-table": "^0.2.0"
   },
   "devDependencies": {
-    "env-test": "~1.0.0",
     "jshint": "^2.5.4",
     "mocha": "~1.21.4",
     "precommit-hook": "^1.0.7",
@@ -44,6 +43,6 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "mocha --require=env-test --timeout=20000 tests/*.js"
+    "test": "mocha --timeout=20000 tests/*.js"
   }
 }
