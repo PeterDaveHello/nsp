@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "jshint": "^2.5.4",
-    "mocha": "~1.21.4",
     "precommit-hook": "^1.0.7",
     "rewire": "~2.1.0",
     "sinon": "^1.10.3"
@@ -43,6 +42,6 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "mocha --timeout=20000 tests/*.js"
+    "test": "make test"
   }
 }
