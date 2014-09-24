@@ -11,7 +11,7 @@ var after = lab.after;
 var assert = Lab.assert;
 var it = lab.it;
 
-suite('auditPackage', function () {
+suite('auditPackage', { timeout: 30000 }, function () {
     var validateStub;
     var sandbox = sinon.sandbox.create();
 
