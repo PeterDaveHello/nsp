@@ -28,7 +28,10 @@
   },
   "devDependencies": {
     "jshint": "^2.5.4",
-    "precommit-hook": "^1.0.7"
+    "lab": "~4.4.4",
+    "precommit-hook": "^1.0.7",
+    "rewire": "~2.1.0",
+    "sinon": "^1.10.3"
   },
   "homepage": "https://nodesecurity.io",
   "keywords": [
@@ -40,6 +43,6 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "node tests/test.js"
+    "test": "make test"
   }
 }
