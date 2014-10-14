@@ -1,9 +1,10 @@
-![](https://nodesecurity.io/img/nodesecurity.png)
-
 Node Security Project **Command Line Tools**
+=====================
+
 
 ## Badgers
-[![Dependency Status](https://david-dm.org/nodesecurity/nsp.png)](https://david-dm.org/nodesecurity/nsp)
+[![Dependency Status](https://david-dm.org/nodesecurity/nsp.svg?style=flat)](https://david-dm.org/nodesecurity/nsp)
+
 
 ## Installation
 
@@ -19,8 +20,9 @@ cd nsp
 npm link
 ```
 
+# Usage
 
-## `nsp audit-shrinkwrap`
+# `nsp audit-shrinkwrap`
 Takes an existing npm-shrinkwrap.json file and submits it for validation to [nodesecurity.io](https://nodesecurity.io/)
 
 **Example:**
@@ -31,7 +33,7 @@ Name     Installed  Patched  Vulnerable Dependency
 connect    2.7.5    >=2.8.1  nodesecurity-jobs > kue > express
 ```
 
-## `nsp audit-package`
+# `nsp audit-package`
 Takes an existing package.json file and submits it for validation to [nodesecurity.io](https://nodesecurity.io/)
 
 **Example:**
