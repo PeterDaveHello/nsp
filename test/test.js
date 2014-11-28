@@ -27,6 +27,7 @@ suite('auditPackage', { timeout: 30000 }, function () {
     });
 
     after(function (done) {
+        auditPackage.validateModule.restore();
         sandbox.restore();
         done();
     });

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "some-dep": "https://github.com/joyent/node.git",
-    "other-dep": "git+ssh://git@github.com:nodesecurity/nsp.git"
+    "other-dep": "git+ssh://git@github.com:nodesecurity/nsp.git",
+    "short-url-dep": "nodesecurity/nsp.git"
   }
 }
 
