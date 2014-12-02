@@ -22,7 +22,7 @@ module.exports = {
     }],
     'qsVulnerabilityResponse': [{
         module: 'qs',
-        version: '1.2.2',
+        version: '2.3.3',
         advisory: {
             title: 'qs Denial-of-Service Extended Event Loop Blocking',
             author: 'Tom Steele',
@@ -33,7 +33,7 @@ module.exports = {
             patched_versions: '>= 1.x',
             url: 'qs_dos_extended_event_loop_blocking'
         },
-        dependencyOf: ['test@0.0.1', 'request@2.45.0', 'qs@1.2.2']
+        dependencyOf: ['test@0.0.1', 'request@2.49.0', 'qs@2.3.3']
     }, {
         module: 'qs',
         version: '0.5.6',
