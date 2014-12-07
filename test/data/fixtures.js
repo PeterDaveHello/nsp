@@ -33,7 +33,7 @@ module.exports = {
             patched_versions: '>= 1.x',
             url: 'qs_dos_extended_event_loop_blocking'
         },
-        dependencyOf: ['test@0.0.1', 'request@2.48.0', 'qs@2.3.3']
+        dependencyOf: ['test@0.0.1', 'request@2.49.0', 'qs@2.3.3']
     }, {
         module: 'qs',
         version: '0.5.6',

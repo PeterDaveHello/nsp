@@ -22,7 +22,8 @@ function action(data) {
     
     nspShrinkwrap.auditByPath(shrinkwrapPath, function (err, results) {
         if (err) { 
-            return console.error(err);
+            console.error(err);
+            process.exit(1);
         }
         prettyOutput(results);
     });
