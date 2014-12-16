@@ -36,6 +36,6 @@ function handleExec(err, stdout, stderr) {
 }
 
 function action(data) {
-    childProcess.execFile('npm', ['ls', '-g', '--json'], handleExec);
+    childProcess.execFile('npm', ['ls', '-g', '--json'], {maxBuffer: 5242880}, handleExec);
 }
 
