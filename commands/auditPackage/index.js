@@ -14,7 +14,7 @@ celeri.option({
 
 celeri.option({
     command: 'package',
-    description: 'audits your package.json against NSP db (same as audit-package)'
+    description: 'alias to audit-package'
 }, action);
 
 

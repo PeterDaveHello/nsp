@@ -3,7 +3,6 @@
   "description": "Node Security Project command line tool",
   "version": "0.6.0",
   "author": "Node Security Project",
-  "main": "index.js",
   "bin": "bin/nspCLI.js",
   "bugs": "https://github.com/nodesecurity/nsp/issues",
   "engines": {
@@ -28,7 +27,8 @@
   },
   "devDependencies": {
     "code": "^1.2.1",
-    "jshint": "^2.5.4",
+    "jscs": "^1.10.0",
+    "jshint": "^2.5.11",
     "lab": "^5.2.0",
     "precommit-hook": "^1.0.7",
     "rewire": "~2.1.0",
@@ -45,6 +45,14 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "node ./node_modules/.bin/lab tests/test.js -r tap | ./node_modules/.bin/tap-spec"
-  }
+    "codestyle": "./node_modules/.bin/jscs bin/*.js lib/*.js tests/*.js",
+    "lint": "./node_modules/.bin/jshint .",
+    "test": "node ./node_modules/.bin/lab tests/test.js -r tap | ./node_modules/.bin/tap-spec",
+    "test-cov": "node ./node_modules/.bin/lab -t 100 tests/test.js"
+  },
+  "precommit": [
+    "codestyle",
+    "lint",
+    "test"
+  ]
 }
