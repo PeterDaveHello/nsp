@@ -1,10 +1,13 @@
-Command Line Tools
-=====================
+command line tools
+==================
+
+> This package consists in a CLI tool that enables developers or CI tools to check if their Node.js projects are using packages with known and public vulnerable dependencies. The vulnerability database is provided by the [Node Security Project](https://nodesecurity.io)
 
 
 ## Badgers
-[![Dependency Status](https://david-dm.org/nodesecurity/nsp.svg?style=flat)](https://david-dm.org/nodesecurity/nsp)
+[![NPM](https://nodei.co/npm/nsp.png?downloads=true&stars=true)](https://nodei.co/npm/nsp/)
 
+[![Dependency Status](https://david-dm.org/nodesecurity/nsp.svg)](https://david-dm.org/nodesecurity/nsp)[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/nodesecurity/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Installation
 

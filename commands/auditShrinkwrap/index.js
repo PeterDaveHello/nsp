@@ -12,7 +12,7 @@ celeri.option({
 
 celeri.option({
     command: 'shrinkwrap',
-    description: 'audits your `npm shrinkwrap` against NSP db (same as audit-shrinkwrap)'
+    description: 'alias to audit-shrinkwrap'
 }, action);
 
 // Action
