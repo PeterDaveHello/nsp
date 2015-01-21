@@ -27,11 +27,13 @@
     "text-table": "^0.2.0"
   },
   "devDependencies": {
+    "code": "^1.2.1",
     "jshint": "^2.5.4",
-    "lab": "^4.6.2",
+    "lab": "^5.2.0",
     "precommit-hook": "^1.0.7",
     "rewire": "~2.1.0",
-    "sinon": "^1.10.3"
+    "sinon": "^1.10.3",
+    "tap-spec": "^2.2.0"
   },
   "homepage": "https://nodesecurity.io",
   "keywords": [
@@ -43,6 +45,6 @@
   "license": "MIT",
   "repository": "git@github.com:nodesecurity/nsp.git",
   "scripts": {
-    "test": "make test"
+    "test": "node ./node_modules/.bin/lab tests/test.js -r tap | ./node_modules/.bin/tap-spec"
   }
 }
