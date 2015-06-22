@@ -11,7 +11,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "celeri": "^0.3.4",
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "node-print": "0.0.4",
     "npmconf": "^2.0.8",
     "nsp-api": "^1.0.0",
