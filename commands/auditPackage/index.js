@@ -24,9 +24,7 @@ celeri.option({
 // Action
 
 function action(data) {
-    var p = path.resolve(process.cwd(), data.file || 'package.json');
-    console.log('Checking package file: ' + p);
-    auditPackage(p,
+    auditPackage(path.resolve(process.cwd(), data.file || 'package.json'),
       function (err, results) {
         if (err) {
             console.error(err);
