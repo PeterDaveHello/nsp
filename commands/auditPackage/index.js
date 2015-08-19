@@ -9,7 +9,10 @@ var prettyOutput = require('./../../lib/prettyOutput');
 
 celeri.option({
     command: 'audit-package',
-    description: 'audits your package.json against NSP db'
+    description: 'audits your package.json against NSP db',
+    optional: {
+        '--file': 'package.json location'
+    }
 }, action);
 
 celeri.option({
@@ -21,7 +24,7 @@ celeri.option({
 // Action
 
 function action(data) {
-    auditPackage(path.resolve(process.cwd(), 'package.json'),
+    auditPackage(path.resolve(process.cwd(), data.file || 'package.json'),
       function (err, results) {
         if (err) {
             console.error(err);
